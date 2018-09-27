@@ -140,8 +140,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java9.build.outputDirectory>${project.build.directory}/generated-resources/</java9.build.outputDirectory>
-        <java9.sourceDirectory>src/main/java</java9.sourceDirectory>
+                <java9.build.outputDirectory>${project.build.directory}/generated-resources/</java9.build.outputDirectory>
+                <java9.sourceDirectory>src/main/java</java9.sourceDirectory>
 	</properties>
 
     <build>
@@ -154,6 +154,7 @@
                 <executions>
                     <execution>
                         <id>assemble-distribution</id>
+                        <tarLongFileMode>posix</tarLongFileMode>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
