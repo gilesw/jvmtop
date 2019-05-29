@@ -46,13 +46,13 @@
         </profile>
 
         <profile>
-            <id>java9</id>
+            <id>java11</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
 
             <properties>
-                <jdk.version>1.8</jdk.version>
+                <jdk.version>11</jdk.version>
             </properties>
 
             <build>
@@ -67,7 +67,7 @@
                         </configuration>
                     </plugin>
 
-                    <!-- maven Java 9 Multi Release jar support -->
+                    <!-- maven Java 11 Multi Release jar support -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
@@ -89,12 +89,12 @@
                         <version>1.8</version>
                         <executions>
                             <execution>
-                                <id>compile-java9</id>
+                                <id>compile-java11</id>
                                 <phase>compile</phase>
                                 <configuration>
                                     <target>
-                                        <mkdir dir="${java9.build.outputDirectory}" />
-                                        <javac source="1.9" target="1.9" srcdir="${java9.sourceDirectory}" destdir="${java9.build.outputDirectory}"
+                                        <mkdir dir="${java11.build.outputDirectory}" />
+                                        <javac source="11" target="11" srcdir="${java11.sourceDirectory}" destdir="${java11.build.outputDirectory}"
                                                classpath="${project.build.outputDirectory}" includeantruntime="false">
 
                                             <compilerarg value="--add-modules" />
@@ -123,10 +123,10 @@
                                     <goal>copy-resources</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>${project.build.outputDirectory}/META-INF/versions/9</outputDirectory>
+                                    <outputDirectory>${project.build.outputDirectory}/META-INF/versions/11</outputDirectory>
                                     <resources>
                                         <resource>
-                                            <directory>${java9.build.outputDirectory}</directory>
+                                            <directory>${java11.build.outputDirectory}</directory>
                                         </resource>
                                     </resources>
                                 </configuration>
@@ -140,8 +140,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <java9.build.outputDirectory>${project.build.directory}/generated-resources/</java9.build.outputDirectory>
-                <java9.sourceDirectory>src/main/java</java9.sourceDirectory>
+                <java11.build.outputDirectory>${project.build.directory}/generated-resources/</java11.build.outputDirectory>
+                <java11.sourceDirectory>src/main/java</java11.sourceDirectory>
 	</properties>
 
     <build>
@@ -154,7 +154,6 @@
                 <executions>
                     <execution>
                         <id>assemble-distribution</id>
-                        <tarLongFileMode>posix</tarLongFileMode>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>

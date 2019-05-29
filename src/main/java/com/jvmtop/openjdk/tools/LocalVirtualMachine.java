@@ -224,7 +224,7 @@ public class LocalVirtualMachine
         try
         {
           MonitoredVm mvm = host.getMonitoredVm(new VmIdentifier(name));
-          // use the command line as the display name
+          // use the command line as the display namel
           name = MonitoredVmUtil.commandLine(mvm);
           attachable = MonitoredVmUtil.isAttachable(mvm);
 
@@ -233,7 +233,7 @@ public class LocalVirtualMachine
         }
         catch (Exception x)
         {
-          // ignore
+          x.printStackTrace(System.err);
         }
         map.put((Integer) vmid, new LocalVirtualMachine(pid, name, attachable,
             address));
