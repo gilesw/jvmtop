@@ -54,6 +54,11 @@
                         <configuration>
                             <source>${jdk.version}</source>
                             <target>${jdk.version}</target>
+                            <compilerArgs>
+                                <arg>--add-exports</arg><arg>java.rmi/sun.rmi.transport=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg><arg>java.rmi/sun.rmi.server=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg><arg>jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED</arg>
+                            </compilerArgs>
                         </configuration>
                     </plugin>
 
