@@ -12,16 +12,6 @@
         <profile>
             <id>java8</id>
 
-            <dependencies>
-                <dependency>
-                    <groupId>com.sun</groupId>
-                    <artifactId>tools</artifactId>
-                    <version>${jdk.version}</version>
-                    <scope>system</scope>
-                    <systemPath>${toolsjar}</systemPath>
-                </dependency>
-            </dependencies>
-
 
             <properties>
                 <!-- change it to point to your tools.jar from your JDK -->

@@ -152,9 +152,7 @@ public class VMInfo
   private Map<String, String>                                     systemProperties_;
 
   /**
-   * @param lastCPUProcessTime
    * @param proxyClient
-   * @param vm
    * @throws RuntimeException
    */
   public VMInfo(ProxyClient proxyClient, LocalVirtualMachine localVm,
@@ -171,10 +169,8 @@ public class VMInfo
 
   /**
    * TODO: refactor to constructor?
-   * @param vmMap
    * @param localvm
    * @param vmid
-   * @param vmInfo
    * @return
    */
   public static VMInfo processNewVM(LocalVirtualMachine localvm, int vmid)
@@ -205,16 +201,13 @@ public class VMInfo
    * @param localvm
    * @param vmid
    * @return
-   * @throws AttachNotSupportedException
-   * @throws IOException
-   * @throws NoSuchMethodException
    * @throws IllegalAccessException
    * @throws InvocationTargetException
    * @throws Exception
    */
   private static VMInfo attachToVM(LocalVirtualMachine localvm, int vmid)
-      throws AttachNotSupportedException, IOException, NoSuchMethodException,
-      IllegalAccessException, InvocationTargetException, Exception
+      throws
+          IllegalAccessException, InvocationTargetException, Exception
   {
     //VirtualMachine vm = VirtualMachine.attach("" + vmid);
     try
@@ -586,7 +579,6 @@ public class VMInfo
   /**
    * Extracts the jvmtop "short version" out of different properties
    * TODO: should this be refactored?
-   * @param runtimeMXBean
    * @return
    */
   private String extractShortVer()

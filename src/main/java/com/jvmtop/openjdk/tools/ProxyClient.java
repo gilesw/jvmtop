@@ -29,6 +29,11 @@
  */
 package com.jvmtop.openjdk.tools;
 
+
+
+import sun.rmi.server.UnicastRef2;
+import sun.rmi.transport.LiveRef;
+
 import static java.lang.management.ManagementFactory.*;
 
 import java.beans.PropertyChangeEvent;
@@ -86,8 +91,7 @@ import javax.management.remote.rmi.RMIConnector;
 import javax.management.remote.rmi.RMIServer;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
-import sun.rmi.server.UnicastRef2;
-import sun.rmi.transport.LiveRef;
+
 
 public class ProxyClient
 {
