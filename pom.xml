@@ -55,9 +55,14 @@
                             <source>${jdk.version}</source>
                             <target>${jdk.version}</target>
                             <compilerArgs>
-                                <arg>--add-exports</arg><arg>java.rmi/sun.rmi.transport=ALL-UNNAMED</arg>
-                                <arg>--add-exports</arg><arg>java.rmi/sun.rmi.server=ALL-UNNAMED</arg>
-                                <arg>--add-exports</arg><arg>jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg>
+                                <arg>java.rmi/sun.rmi.transport=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg>
+                                <arg>java.rmi/sun.rmi.server=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg>
+                                <arg>jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED</arg>
+                                <arg>--add-exports</arg>
+                                <arg>jdk.management.agent/jdk.internal.agent=ALL-UNNAMED</arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>
@@ -91,12 +96,12 @@
                                         <mkdir dir="${java11.build.outputDirectory}" />
                                         <javac source="11" target="11" srcdir="${java11.sourceDirectory}" destdir="${java11.build.outputDirectory}"
                                                classpath="${project.build.outputDirectory}" includeantruntime="false">
-
                                             <compilerarg value="--add-modules" />
                                             <compilerarg value="jdk.management,jdk.management.agent,jdk.attach,jdk.internal.jvmstat,java.rmi,java.management.rmi,java.desktop,java.sql" />
                                             <compilerarg value="--add-exports=java.rmi/sun.rmi.server=ALL-UNNAMED" />
                                             <compilerarg value="--add-exports=java.rmi/sun.rmi.transport=ALL-UNNAMED" />
                                             <compilerarg value="--add-exports=jdk.internal.jvmstat/sun.jvmstat.monitor=ALL-UNNAMED" />
+                                            <compilerarg value="--add-exports=jdk.management.agent/jdk.internal.agent=ALL-UNNAMED" />
                                         </javac>
                                     </target>
                                 </configuration>
